@@ -1,0 +1,28 @@
+{
+  "name": "storepractice",
+  "version": "1.0.0",
+  "description": "Practicando nodejs y comienzos de express con la creacion de una API para una tienda",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GonzaloEspindola/StorePractice.git"
+  },
+  "keywords": [],
+  "author": "=",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GonzaloEspindola/StorePractice/issues"
+  },
+  "homepage": "https://github.com/GonzaloEspindola/StorePractice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
