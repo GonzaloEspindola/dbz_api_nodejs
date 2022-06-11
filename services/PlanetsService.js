@@ -1,29 +1,26 @@
+const pool = require('../libs/postgres');
+
 class PlanetsService {
 
     constructor(){
-        this.planets = [];
         this.generate();
+        this.pool = pool;
+        this.pool.on('error', (err) => console.log(err));
     }
 
     async generate(){
-        this.planets.push({
-            name: "Tierra",
-            universo: "7",
-            id: "1"
-        },
-        {
-            name: "Planeta Vegeta",
-            especie: "7",
-            id: "2"
-        })
     }
 
     async find(){
-        return this.planets;
+        const query = 'SELECT * FROM planets';
+        const rta = await this.pool.query(query);
+        return rta.rows;
     }
 
     async findOne(id){
-        return this.planets.find(item => item.id === id);
+        const query = 'SELECT * FROM planets';
+        const rta = await this.pool.query(query);
+        return rta.rows.find(item => item.id == id);
     }
 }
 
