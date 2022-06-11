@@ -1,7 +1,7 @@
 {
-  "name": "storepractice",
+  "name": "dbz",
   "version": "1.0.0",
-  "description": "Practicando nodejs y comienzos de express con la creacion de una API para una tienda",
+  "description": "Dragon ball API",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
@@ -26,5 +26,8 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "pg": "^8.7.3"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
