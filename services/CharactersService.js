@@ -9,7 +9,7 @@ class CharactersService {
     }
 
     async generate(){
-
+        
     }
 
     async find(offset, limit){
