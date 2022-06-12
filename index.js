@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const routerApi = require('./routes/index');
+var path = require('express');
 
 // create application
 const app = express();
@@ -10,9 +11,18 @@ app.listen(port, () => {
 })
 app.use(cors());
 
-//def route
+
+//def index route
 app.get('/', (req, res) => {
-    res.send('Hola mi server en express')
+    res.sendFile(__dirname + "\\public\\index.html");
 })
+
+//def docs route
+app.get('/documentacion', (req, res) => {
+    res.sendFile(__dirname + "\\public\\docs.html");
+})
+
+app.use(express.static(__dirname + "\\public"))
+
 
 routerApi(app);
