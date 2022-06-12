@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
 
 //def docs route
 app.get('/documentacion', (req, res) => {
-    res.sendFile(__dirname + "\\public\\docs.html");
+    res.sendFile(__dirname + "/public/docs.html");
 })
 
-app.use(express.static(__dirname + "\\public"))
+app.use(express.static(__dirname + "/public"))
 
 
 routerApi(app);
