@@ -14,7 +14,7 @@ app.use(cors());
 
 //def index route
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "\\public\\index.html");
+    res.sendFile(__dirname + "/public/index.html");
 })
 
 //def docs route
