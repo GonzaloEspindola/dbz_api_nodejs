@@ -5,6 +5,12 @@ API en node.js de la popular serie "Dragon Ball".
 ## Getting Started
 Check out the [documentation][1] to get started
 
+## Built With
+• Nodejs
+• Express
+• Npm
+• Postgresql
+
 ## Website
 
 ![](https://i.ibb.co/1Kq3cCk/dragon-ball-super-api-herokuapp-com-2.png)
