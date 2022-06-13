@@ -7,8 +7,11 @@ Check out the [documentation][1] to get started
 
 ## Built With
 • Nodejs
+
 • Express
+
 • Npm
+
 • Postgresql
 
 ## Website
