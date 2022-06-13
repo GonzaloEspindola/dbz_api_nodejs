@@ -1,13 +1,15 @@
 const navCharacterContainer = document.getElementById('nav_character');
 const mainCharacterImg = document.getElementById('main_character_img_container');
 const mainCharacterInfo = document.getElementById('main_character_info');
+const deployP = document.getElementById('deployP');
+const personajesP = document.getElementById('personajesP');
 
 
 async function getNavCharacters () {
-    await fetch("https://dragon-ball-super-api.herokuapp.com/api/characters?limit=10")
+    await fetch("https://dragon-ball-super-api.herokuapp.com/api/characters/role/Angel")
     .then(res => res.json())
     .then(res => {
-        res[0].map(character => {
+        res.map(character => {
             var characterItemContainer = document.createElement('div');
             characterItemContainer.className = `character_item`;
             characterItemContainer.setAttribute('id', character.name);
@@ -53,7 +55,9 @@ function setMainCharacter(character) {
     roleP.innerHTML = `&nbsp${role}`;
     specieP.innerHTML = `&nbsp${specie}`;
     statusP.innerHTML = `&nbsp${status}`;
+    personajesP.innerHTML = 'Universo:'
     universeP.innerHTML = `&nbsp${universe}`;
+    deployP.innerHTML = 'Planeta de origen:'
     originplanetP.innerHTML = `&nbsp${originplanet}`;
 }
 

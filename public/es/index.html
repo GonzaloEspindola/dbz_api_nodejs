@@ -4,20 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <title>Dragon ball API</title>
 </head>
 <body>
     <main class="main">
         <header class="header">
+            <div></div>
             <nav class="nav">
-                <ul>
-                    <a href="/documentacion"><li>Documentacion</li></a>
-                    <a href="/informacion"><li>Sobre API</li></a>
+                <ul class="nav-ul">
+                    <a href="/es/"><li>Inicio</li></a>
+                    <a href="/es/documentacion"><li>Documentacion</li></a>
+                    <!-- <a href="/informacion"><li>Sobre API</li></a> -->
                 </ul>
             </nav>
+            <div>
+                <a href="/en">Español</a>
+            </div>
         </header>
 
         <section class="main_character">
@@ -45,12 +50,12 @@
                     </div>
 
                     <div>
-                        <p>Personajes:&nbsp;</p>
+                        <p id="personajesP">Personajes:&nbsp;</p>
                         <a id="universeP" href="https://dragon-ball-super-api.herokuapp.com/api/characters" target="_blank">129</a>
                     </div>
 
                     <div>
-                        <p>Deploy:&nbsp;</p>
+                        <p id="deployP">Deploy:&nbsp;</p>
                         <p id="originplanetP">Heroku</p>
                     </div>
                 </div>
@@ -73,6 +78,6 @@
 
     
 
-    <script src="main.js"></script>
+    <script src="../main.js"></script>
 </body>
 </html>

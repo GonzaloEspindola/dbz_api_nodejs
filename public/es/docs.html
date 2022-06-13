@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <title>Documentacion</title>
+</head>
+<body>
+    <main class="main_docs">
+        
+        <header class="header header_docs">
+            <div></div>
+            <nav class="nav_docs">
+                <ul>
+                    <a href="/"><li>Inicio</li></a>
+                    <a href="/en/documentacion"><li>Documentacion</li></a>
+                    <!-- <a href="/informacion"><li>Sobre API</li></a> -->
+                </ul>
+            </nav>
+            <div>
+                <a href="/en/documentation">Español</a>
+            </div>
+        </header>
+
+        <section class="container">
+            <div class="navbar">
+                <ul>
+                    <li class="title_list">Introduccion</li>
+                    <a href="#rest"><li class="item_list">• REST</li></a>
+                    <a href="#info"><li class="item_list">• Informacion</li></a>
+
+                    <li class="title_list">Personajes</li>
+                    <a href="#character_schema"><li class="item_list">• Personaje 'schema'</li></a>
+                    <a href="#allcharacter"><li class="item_list">• Obtener todos los personajes</li></a>
+                    <a href="#idcharacter"><li class="item_list">• Obtener un personaje</li></a>
+                </ul>
+            </div>
+
+            <div class="container_doc">
+                <div id="rest" class="mini_container rest">
+                    <h1 class="title_list">REST</h1>
+                    <h3 class="url_text">URL base: </h3><a class="url_link" href="https://dragon-ball-super-api.herokuapp.com/api">https://dragon-ball-super-api.herokuapp.com/api</a>
+                    <p>La url base contiene la informacion sobre los recursos disponibles de la API. Todas las solicitudes devolveran datos <span class="type">json</span>.</p>
+
+                    <pre>
+<span class="token string">GET </span>https://dragon-ball-super-api.herokuapp.com/api
+                        <code class="language-json">
+{
+    "characters": "https://dragon-ball-super-api.herokuapp.com/api/characters"
+}
+                        </code>
+                    </pre>
+
+                    <p>Recursos disponibles:</p>
+                    <ul>
+                        <li><a class="url_link" href="#personajes">Personajes</a>: obtener todos los personajes.</li>
+                    </ul>
+                </div>
+
+                <div id="info" class="mini_container info">
+                    <h1 class="title_list">Informacion</h1>
+                    <p>Esta documentacion te ayudara a familirizarte con los recursos de la API de Dragon ball mostrandote las diferentes consultas de datos.</p>
+                </div>
+
+                <div id="character_schema" class="mini_container character_schema">
+                    <h1 class="title_list">Esquema de personaje</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Key</th>
+                                <th>Tipo</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>id</td>
+                                <td>int</td>
+                                <td>El id del personaje</td>
+                            </tr>
+                            <tr>
+                                <td>imageUrl</td>
+                                <td>string (url)</td>
+                                <td>Una imagen (.png) del personaje</td>
+                            </tr>
+                            <tr>
+                                <td>name</td>
+                                <td>string</td>
+                                <td>El nombre del personaje</td>
+                            </tr>
+                            <tr>
+                                <td>originplanet</td>
+                                <td>string</td>
+                                <td>El planeta de origen del personaje</td>
+                            </tr>
+                            <tr>
+                                <td>role</td>
+                                <td>string</td>
+                                <td>El rol mas importante o actual que cumple el personaje</td>
+                            </tr>
+                            <tr>
+                                <td>specie</td>
+                                <td>string</td>
+                                <td>La especie del personaje</td>
+                            </tr>
+                            <tr>
+                                <td>status</td>
+                                <td>string</td>
+                                <td>Estado actual del personaje</td>
+                            </tr>
+                            <tr>
+                                <td>transform</td>
+                                <td>array</td>
+                                <td>Array con las transformaciones del personaje (si tiene)</td>
+                            </tr>
+                            <tr>
+                                <td>universe</td>
+                                <td>string</td>
+                                <td>Universo al cual pertenece ese personaje</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="allcharacter" class="mini_container allcharacter">
+                    <h1 class="title_list">Obtener todos los personajes</h1>
+                    <h3 class="url_text">Endpoint: </h3><a class="url_link" href="https://dragon-ball-super-api.herokuapp.com/api/characters">https://dragon-ball-super-api.herokuapp.com/api/characters</a>
+                    <p>Puedes acceder a la lista de todos los personajes usando el endpoint <span class="type">/characters</span>.</p>
+
+                    <pre>
+<span class="token string">GET </span>https://dragon-ball-super-api.herokuapp.com/api<span class="endpoint">/characters</span>
+                        <code class="language-json">
+{
+    "characters": "https://dragon-ball-super-api.herokuapp.com/api/characters"
+}
+                        </code>
+                    </pre>
+
+                    <h1 class="title_list">Paginacion simple</h1>
+                    <h3 class="url_text">Endpoint: </h3><a class="url_link" href="https://dragon-ball-super-api.herokuapp.com/api/characters?limit=50">https://dragon-ball-super-api.herokuapp.com/api/characters?limit={max-characters}</a>
+                    <p>Puedes acceder a cierta paginacion utilizando el parametro query <span class="type">limit</span> <span class="type">/characters?limit={max-characters}</span>. Esto devolvera un array con los personajes separados en objetos separados en base al parametro <span class="type">limit</span></p>
+
+                    <pre>
+<span class="token string">GET </span>https://dragon-ball-super-api.herokuapp.com/api/characters<span class="endpoint">/characters?limit=50</span>
+                        <code class="language-json">
+[
+    0: {...}
+    1: {...}
+    2: {...}
+]
+                        </code>
+// Array de 50 personajes cada posicion.
+                    </pre>
+
+                    <h1 class="title_list">Offset y limit</h1>
+                    <h3 class="url_text">Endpoint: </h3><a class="url_link" href="https://dragon-ball-super-api.herokuapp.com/api/characters?offset=0?limit=50">https://dragon-ball-super-api.herokuapp.com/api/characters?offset={x}?limit={y}</a>
+                    <p>Puedes acceder a cierta paginacion utilizando el parametro query <span class="type">offset</span> y <span class="type">limit</span> <span class="type">/characters?offset={x}?limit={y}</span>.</p>
+
+                    <pre>
+<span class="token string">GET </span>https://dragon-ball-super-api.herokuapp.com/api/characters<span class="endpoint">/characters?offset=0?limit=50</span>
+                        <code class="language-json">
+[
+    0: {...}
+    1: {...}
+    2: {...}
+]
+                        </code>
+                    </pre>
+                </div>
+
+                <div id="idcharacter" class="mini_container idcharacter">
+                    <h1 class="title_list">Obtener un personaje por nombre</h1>
+                    <h3 class="url_text">Endpoint: </h3><a class="url_link" href="https://dragon-ball-super-api.herokuapp.com/api/characters/Gohan">https://dragon-ball-super-api.herokuapp.com/api/characters/{name}</a>
+                    <p>Puedes acceder a un personaje usando su nombre <span class="type">/characters/{name}</span>.</p>
+
+                    <pre>
+<span class="token string">GET </span>https://dragon-ball-super-api.herokuapp.com/api<span class="endpoint">/characters/Gohan</span>
+                        <code class="language-json">
+{
+    "id": x,
+    "imageUrl": "url",
+    "name": "Gohan",
+    "originplanet": "Planeta Tierra",
+    "role": "Guerrero Z",
+    "specie": "Saiyan Mestizo",
+    "status": "Vivo",
+    "transform": [],
+    "universe": "7"
+}
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body>
+</html>

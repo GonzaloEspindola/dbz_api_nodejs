@@ -11,15 +11,27 @@ app.listen(port, () => {
 })
 app.use(cors());
 
-
-//def index route
+//def rediret
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/public/es/index.html");
 })
 
-//def docs route
-app.get('/documentacion', (req, res) => {
-    res.sendFile(__dirname + "/public/docs.html");
+//es
+app.get('/es', (req, res) => {
+    res.sendFile(__dirname + "/public/es/index.html");
+})
+
+app.get('/es/documentacion', (req, res) => {
+    res.sendFile(__dirname + "/public/es/docs.html");
+})
+
+//en
+app.get('/en', (req, res) => {
+    res.sendFile(__dirname + "/public/en/index.html");
+})
+
+app.get('/en/documentation', (req, res) => {
+    res.sendFile(__dirname + "/public/en/docs.html");
 })
 
 app.use(express.static(__dirname + "/public"))
