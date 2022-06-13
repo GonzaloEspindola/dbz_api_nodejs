@@ -1,4 +1,4 @@
-# Dragn Ball API
+# Dragon Ball API
 
 API en node.js de la popular serie "Dragon Ball".
 
