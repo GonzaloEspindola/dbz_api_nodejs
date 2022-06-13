@@ -16,6 +16,14 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + "/public/es/index.html");
 })
 
+app.get('/api', (req, res) => {
+    res.json(
+    {
+        characters: "https://dragon-ball-super-api.herokuapp.com/api/characters"
+    }
+    )
+})
+
 //es
 app.get('/es', (req, res) => {
     res.sendFile(__dirname + "/public/es/index.html");
