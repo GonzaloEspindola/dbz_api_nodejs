@@ -32,7 +32,7 @@ switch (aleatoryNumber) {
             url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%2010';
         break;
         case 9:
-            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%2012';
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%2011';
         break;
     }
 
