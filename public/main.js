@@ -4,11 +4,47 @@ const mainCharacterInfo = document.getElementById('main_character_info');
 const deployP = document.getElementById('deployP');
 const personajesP = document.getElementById('personajesP');
 
+var url = '';
+var aleatoryNumber = random(1,9);
+switch (aleatoryNumber) {
+    case 1:
+        url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Angel';
+        break;
+    case 2:
+        url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Dios%20de%20la%20destruccion';
+        break;
+    case 3:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%202';
+            break;
+        case 4:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%203';
+        break;
+        case 5:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%204';
+        break;
+        case 6:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%206';
+        break;
+        case 7:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%209';
+        break;
+        case 8:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%2010';
+        break;
+        case 9:
+            url = 'https://dragon-ball-super-api.herokuapp.com/api/characters/role/Guerrero%20universo%2012';
+        break;
+    }
+
+function random(min, max) {
+    return Math.floor((Math.random() * (max - min + 1)) + min);
+}
 
 async function getNavCharacters () {
-    await fetch("https://dragon-ball-super-api.herokuapp.com/api/characters/role/Angel")
+    await fetch(url)
     .then(res => res.json())
     .then(res => {
+        console.log(res)
         res.map(character => {
             var characterItemContainer = document.createElement('div');
             characterItemContainer.className = `character_item`;
